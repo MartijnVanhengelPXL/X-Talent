@@ -1,0 +1,283 @@
+/*
+ * Hoe de wereld langs het spoor eruitziet.
+ * Spoor 2 (2TIN): vlak Vlaams land, populieren en knotwilgen.
+ * Spoor 3 (3TIN): heuvels en sparren richting Duitsland, met warmer licht.
+ */
+
+.surface {
+  position: absolute;
+  inset: 0;
+}
+/*
+ * Grote vlakken die dichtbij komen (spoor, perron, tunnel, heuvel): de browser hoeft ze niet
+ * telkens opnieuw in hogere resolutie te tekenen als ze groter worden. Dat scheelt pieken.
+ */
+.layer--floor,
+.layer--ceiling,
+.layer--wall-left,
+.layer--wall-right,
+.layer--steady {
+  will-change: transform;
+}
+
+.layer > svg,
+.layer > div > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ───────────── Lucht en horizon (plat, achter de 3D-wereld) ───────────── */
+
+.sky {
+  position: absolute;
+  inset: 0;
+  /* Wisselt in één keer, als je al in de tunnel zit (je ziet het dus niet). */
+}
+.sky--2tin {
+  background: linear-gradient(#9fc0d6 0%, #c8dbe3 32%, #e4ebe2 50%, #a3b77d 50%, #93aa6c 58%, #84a05f 100%);
+}
+.sky--3tin {
+  opacity: 0;
+  background: linear-gradient(#8fb0cc 0%, #d9cdb3 38%, #f1d9a8 50%, #869a66 50%, #758c57 58%, #66804c 100%);
+}
+.stage[data-era='3tin'] .sky--3tin { opacity: 1; }
+.stage[data-era='3tin'] .sky--2tin { visibility: hidden; }
+.stage:not([data-era='3tin']) .sky--3tin { visibility: hidden; }
+
+.far {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  width: 100%;
+  height: 16vh;
+}
+.cloud {
+  position: absolute;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* ───────────── Grond en spoor ───────────── */
+
+.s-ground { background: transparent; }
+/* Het spoorbed: staven, dwarsliggers en ballast. Daarbuiten is het vlak doorzichtig. */
+.land--track .s-ground {
+  background:
+    linear-gradient(90deg,
+      transparent calc(50% - 104px), #5b6168 calc(50% - 104px), #c9ced3 calc(50% - 99px), #5b6168 calc(50% - 92px), transparent calc(50% - 92px),
+      transparent calc(50% + 92px), #5b6168 calc(50% + 92px), #c9ced3 calc(50% + 97px), #5b6168 calc(50% + 104px), transparent calc(50% + 104px)),
+    repeating-linear-gradient(to bottom, #6a5847 0 26px, transparent 26px 82px) 50% 0 / 360px 100% no-repeat,
+    linear-gradient(90deg, transparent calc(50% - 330px), rgba(127, 121, 110, 0.6) calc(50% - 310px), #a29b8e calc(50% - 250px), #a29b8e calc(50% + 250px), rgba(127, 121, 110, 0.6) calc(50% + 310px), transparent calc(50% + 330px));
+}
+.land--tunnel.land--track .s-ground {
+  background:
+    linear-gradient(90deg,
+      transparent calc(50% - 104px), #3c4045 calc(50% - 104px), #8d9297 calc(50% - 99px), #3c4045 calc(50% - 92px), transparent calc(50% - 92px),
+      transparent calc(50% + 92px), #3c4045 calc(50% + 92px), #8d9297 calc(50% + 97px), #3c4045 calc(50% + 104px), transparent calc(50% + 104px)),
+    repeating-linear-gradient(to bottom, #3a3129 0 26px, transparent 26px 82px) 50% 0 / 360px 100% no-repeat,
+    #4a4640;
+}
+.s-wire { background: #2f3438; }
+
+/* ───────────── Station ───────────── */
+
+.s-platform {
+  background:
+    /* rand, witte lijn en geleidetegels aan de spoorkant */
+    linear-gradient(90deg, #d8d3c8 0 46px, #b9b3a6 46px 70px, #f4f2ec 70px 82px, #b9b3a6 82px 120px, #d9c46a 120px 156px, transparent 156px),
+    /* tegels */
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 2px, transparent 2px) 0 0 / 120px 120px,
+    linear-gradient(rgba(0, 0, 0, 0.08) 2px, transparent 2px) 0 0 / 120px 120px,
+    #b9b3a6;
+}
+.s-platform-edge {
+  background: linear-gradient(#cdc8bd 0 12%, #8e887c 12% 80%, #6f6a60 80%);
+}
+.s-canopy {
+  background:
+    repeating-linear-gradient(to bottom, #2e3a46 0 14px, #3b4a59 14px 140px),
+    #3b4a59;
+}
+.pillar {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #4a5967, #2e3a46);
+}
+
+.sign {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.sign__rod {
+  position: absolute;
+  top: 0;
+  width: 5px;
+  height: 34px;
+  background: #2e3a46;
+}
+.sign__rod:first-child { left: 18%; }
+.sign__rod:nth-child(2) { right: 18%; }
+.sign__plate {
+  position: absolute;
+  left: 50%;
+  top: 34px;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: max-content;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  background: var(--spoorblauw);
+  color: #fff;
+  font: 600 76px/1 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 6px var(--spoorblauw), inset 0 0 0 9px #fff;
+}
+.sign__extra {
+  margin-top: 6px;
+  font: 500 34px/1 'Barlow Condensed', sans-serif;
+  color: #c9d3e0;
+}
+.sign--extra .sign__plate { font-size: 64px; }
+
+/* ───────────── Tunnel ───────────── */
+
+.portal__label {
+  font: 600 84px 'Barlow Condensed', sans-serif;
+  fill: #fff;
+}
+.s-tunnel {
+  background:
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.25) 0 6px, transparent 6px 400px),
+    linear-gradient(#2a2c2f, #3a3c40 70%, #2f3033);
+}
+.s-tunnel--top {
+  background:
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0 6px, transparent 6px 400px),
+    #232528;
+}
+.tunnel-light {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: #ffe7a8;
+  box-shadow: 0 0 30px 12px rgba(255, 210, 120, 0.35);
+}
+
+/* ───────────── Stationsgebouw met fotomuur ───────────── */
+
+.s-building {
+  background:
+    /* voegen van het metselwerk */
+    linear-gradient(rgba(60, 30, 20, 0.35) 2px, transparent 2px) 0 0 / 60px 24px,
+    linear-gradient(90deg, rgba(60, 30, 20, 0.35) 2px, transparent 2px) 0 0 / 60px 48px,
+    linear-gradient(90deg, rgba(60, 30, 20, 0.35) 2px, transparent 2px) 30px 24px / 60px 48px,
+    linear-gradient(#a65a40, #94503a);
+  box-shadow: inset 0 14px 0 #7c412e;
+}
+.building__door {
+  position: absolute;
+  left: 60px;
+  bottom: 0;
+  width: 150px;
+  height: 330px;
+  background: #3d5a6c;
+  border: 10px solid #e8e2d6;
+  border-bottom: 0;
+}
+.building__door i {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 16px;
+  height: 120px;
+  background: #a9c3cf;
+}
+.building__window {
+  position: absolute;
+  left: 270px;
+  top: 90px;
+  width: 160px;
+  height: 190px;
+  background: linear-gradient(90deg, transparent 47%, #e8e2d6 47% 53%, transparent 53%), linear-gradient(transparent 47%, #e8e2d6 47% 53%, transparent 53%), #a9c3cf;
+  border: 10px solid #e8e2d6;
+}
+.building__window--end {
+  left: auto;
+  right: -100px;
+}
+
+.expo {
+  position: absolute;
+  left: 480px;
+  right: 50px;
+  top: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 14px;
+  background: #f4f2ec;
+  border: 8px solid #2e3a46;
+  border-radius: 4px;
+}
+.expo__title {
+  align-self: flex-start;
+  margin: 0 0 14px;
+  padding: 8px 20px 10px;
+  background: var(--spoorblauw);
+  color: #fff;
+  font: 600 34px/1 'Barlow Condensed', sans-serif;
+}
+.expo__photos {
+  flex: 1;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 18px;
+  min-height: 0;
+}
+.expo__photo {
+  margin: 0;
+  flex: 1;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.expo__photo img {
+  display: block;
+  width: 100%;
+  max-height: 290px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #dfe5ea;
+  box-shadow: 0 0 0 6px #fff, 0 2px 0 6px rgba(0, 0, 0, 0.15);
+}
+.expo__photos--3 .expo__photo img { max-height: 210px; }
+.expo__photo figcaption {
+  margin-top: 14px;
+  color: var(--inkt);
+  font: 500 19px/1.25 'Barlow', sans-serif;
+}
+
+.track-number {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: var(--spoorblauw);
+  border: 5px solid var(--spoorblauw);
+  border-radius: 4px;
+  font: 700 44px/1 'Barlow Condensed', sans-serif;
+}

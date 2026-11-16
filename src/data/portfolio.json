@@ -1,0 +1,444 @@
+{
+  "naam": "Martijn Vanhengel",
+  "opleiding": "Toegepaste informatica, PXL Hogeschool",
+  "voorstelling": {
+    "bord": "Martijn Vanhengel",
+    "titel": "Wie ben ik?",
+    "tekst": "Schrijf hier in een paar zinnen wie je bent: je opleiding, waar je vandaan komt en wat je drijft. Houd het persoonlijk; de jury wil jou leren kennen, niet je cv.",
+    "interesses": [
+      "Interesse 1",
+      "Interesse 2",
+      "Interesse 3"
+    ],
+    "pop": "Wat heb je over jezelf geleerd in de POP-sessies? Noem één of twee inzichten die je echt zijn bijgebleven.",
+    "fotos": [
+      {
+        "src": "images/foto-placeholder.svg",
+        "onderschrift": "Een foto van jezelf"
+      },
+      {
+        "src": "images/foto-placeholder.svg",
+        "onderschrift": "Iets dat bij je interesses past"
+      }
+    ]
+  },
+  "jaren": [
+    {
+      "id": "2tin",
+      "spoor": "Spoor 2",
+      "label": "2TIN",
+      "schooljaar": "2025-2026",
+      "stations": [
+        {
+          "id": "seminaries-2",
+          "bord": "Seminaries",
+          "domein": "Seminaries",
+          "samenvatting": "Vier seminaries bij PXL. Schrijf hier in één of twee zinnen welk seminarie je het meest is bijgebleven en waarom.",
+          "activiteiten": [
+            {
+              "titel": "Seminarie 1: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2025",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 2: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2025",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 3: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 4: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            }
+          ],
+          "fotos": [
+            {
+              "src": "images/seminarie.svg",
+              "onderschrift": "Onderschrift bij de foto"
+            }
+          ]
+        },
+        {
+          "id": "projectweek",
+          "bord": "Projectweek",
+          "domein": "Persoonlijke ontwikkeling",
+          "samenvatting": "Een week lang in team aan een project, afgesloten met het Crossroads Event. Vat hier in twee zinnen samen wat jullie maakten en wat jouw rol was.",
+          "activiteiten": [
+            {
+              "titel": "Projectweek",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "1 week",
+              "zelf": false
+            },
+            {
+              "titel": "Crossroads Event",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "1 dag",
+              "zelf": false
+            },
+            {
+              "titel": "Reflectieverslag projectweek",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "Thuis",
+              "datum": "dd/mm/2026",
+              "duur": "",
+              "zelf": false
+            }
+          ],
+          "verslag": {
+            "doelstellingen": {
+              "activiteit": "Wat was het doel van de projectweek, volgens de school?",
+              "eigen": "Wat wilde jij er zelf uithalen? Bijvoorbeeld: leren samenwerken met mensen die je niet kent, een nieuwe technologie uitproberen…"
+            },
+            "team": "Wie zat er in je team en wie deed wat? (optioneel)",
+            "verslag": "Vertel wat er die week gebeurde, dag per dag of in grote stappen. Wat hebben jullie gemaakt en hoe zag het Crossroads Event eruit?",
+            "reflectie": [
+              {
+                "vraag": "Wat heb je gedaan?",
+                "antwoord": "Beschrijf jouw taken en je bijdrage aan het team."
+              },
+              {
+                "vraag": "Heb je problemen ondervonden? Hoe heb je die aangepakt?",
+                "antwoord": "Kies één concreet probleem en vertel hoe je het oploste."
+              },
+              {
+                "vraag": "Wat vond je ervan, hoe heb je het ervaren?",
+                "antwoord": "Wees eerlijk, ook over wat tegenviel."
+              },
+              {
+                "vraag": "Wat heb je geleerd?",
+                "antwoord": "Over het onderwerp, over samenwerken en over jezelf."
+              },
+              {
+                "vraag": "Wat waren jouw sterke en zwakke punten?",
+                "antwoord": "Geef van beide een voorbeeld uit die week."
+              },
+              {
+                "vraag": "Wat is de link met de opleiding?",
+                "antwoord": "Welke vakken of vaardigheden kwamen terug?"
+              },
+              {
+                "vraag": "Waarom heb ik deze activiteit gekozen?",
+                "antwoord": "Waarom zegt juist deze activiteit iets over wie jij bent?"
+              }
+            ]
+          },
+          "fotos": [
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Ons team aan het werk"
+            },
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Ons eindresultaat op Crossroads"
+            }
+          ]
+        },
+        {
+          "id": "pop-2",
+          "bord": "POP-sessies",
+          "domein": "Persoonlijke ontwikkeling",
+          "samenvatting": "Twee sessies over mijn persoonlijk ontwikkelingspad. Schrijf hier wat je eruit meenam.",
+          "activiteiten": [
+            {
+              "titel": "POP-sessie 1",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2025",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "POP-sessie 2",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            }
+          ],
+          "fotos": [
+            {
+              "src": "images/pop.svg",
+              "onderschrift": "Onderschrift bij de foto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3tin",
+      "spoor": "Spoor 3",
+      "label": "3TIN",
+      "schooljaar": "2026-2027",
+      "stations": [
+        {
+          "id": "seminaries-3",
+          "bord": "Seminaries",
+          "domein": "Seminaries",
+          "samenvatting": "Vier seminaries bij PXL. Schrijf hier welk seminarie je het meest is bijgebleven en waarom.",
+          "activiteiten": [
+            {
+              "titel": "Seminarie 5: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 6: titel",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 7: titel",
+              "omschrijving": "Nog te volgen.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2027",
+              "duur": "2 uur",
+              "zelf": false
+            },
+            {
+              "titel": "Seminarie 8: titel",
+              "omschrijving": "Nog te volgen.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2027",
+              "duur": "2 uur",
+              "zelf": false
+            }
+          ],
+          "fotos": [
+            {
+              "src": "images/seminarie.svg",
+              "onderschrift": "Onderschrift bij de foto"
+            }
+          ]
+        },
+        {
+          "id": "hackathon",
+          "bord": "Hackathon",
+          "domein": "Innovatie",
+          "samenvatting": "De innovatieroute, met als hoogtepunt de hackathon. Vat hier in twee zinnen samen welk probleem jullie aanpakten en wat jullie bouwden.",
+          "activiteiten": [
+            {
+              "titel": "Innovatieroute",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "",
+              "zelf": false
+            },
+            {
+              "titel": "Hackathon",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "24 uur",
+              "zelf": false
+            }
+          ],
+          "verslag": {
+            "doelstellingen": {
+              "activiteit": "Wat was de opdracht of uitdaging van de hackathon?",
+              "eigen": "Wat wilde jij er zelf uithalen?"
+            },
+            "team": "Wie zat er in je team en wie deed wat? (optioneel)",
+            "verslag": "Vertel hoe de hackathon verliep: van het idee tot de pitch. Wat hebben jullie gebouwd?",
+            "reflectie": [
+              {
+                "vraag": "Wat heb je gedaan?",
+                "antwoord": "Beschrijf jouw taken en je bijdrage aan het team."
+              },
+              {
+                "vraag": "Heb je problemen ondervonden? Hoe heb je die aangepakt?",
+                "antwoord": "Kies één concreet probleem en vertel hoe je het oploste."
+              },
+              {
+                "vraag": "Wat vond je ervan, hoe heb je het ervaren?",
+                "antwoord": "Wees eerlijk, ook over wat tegenviel."
+              },
+              {
+                "vraag": "Wat heb je geleerd?",
+                "antwoord": "Over het onderwerp, over samenwerken en over jezelf."
+              },
+              {
+                "vraag": "Wat waren jouw sterke en zwakke punten?",
+                "antwoord": "Geef van beide een voorbeeld."
+              },
+              {
+                "vraag": "Wat is de link met de opleiding?",
+                "antwoord": "Welke vakken of vaardigheden kwamen terug?"
+              },
+              {
+                "vraag": "Waarom heb ik deze activiteit gekozen?",
+                "antwoord": "Waarom zegt juist deze activiteit iets over wie jij bent?"
+              }
+            ]
+          },
+          "fotos": [
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Midden in de nacht nog aan het coderen"
+            },
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Onze pitch voor de jury"
+            }
+          ]
+        },
+        {
+          "id": "duitsland",
+          "bord": "Duitsland",
+          "bordExtra": "Deutschland",
+          "domein": "Internationalisering",
+          "samenvatting": "Met school naar Duitsland. Vat hier in twee zinnen samen waar je was, wat je deed en met wie je samenwerkte.",
+          "activiteiten": [
+            {
+              "titel": "Internationale week in Duitsland",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "Stad, Duitsland",
+              "datum": "dd/mm/2026",
+              "duur": "1 week",
+              "zelf": false
+            }
+          ],
+          "verslag": {
+            "doelstellingen": {
+              "activiteit": "Wat was het doel van de reis, volgens de school?",
+              "eigen": "Wat wilde jij er zelf uithalen? Bijvoorbeeld: Engels of Duits spreken, werken met buitenlandse studenten…"
+            },
+            "team": "Met wie werkte je samen? Uit welke landen kwamen ze? (optioneel)",
+            "verslag": "Vertel wat jullie daar deden. Welke bedrijven of scholen bezochten jullie? Wat viel je op aan hoe men daar werkt?",
+            "reflectie": [
+              {
+                "vraag": "Wat heb je gedaan?",
+                "antwoord": "Beschrijf wat jij daar concreet deed."
+              },
+              {
+                "vraag": "Heb je problemen ondervonden? Hoe heb je die aangepakt?",
+                "antwoord": "Denk aan taal, cultuur of samenwerken op afstand."
+              },
+              {
+                "vraag": "Wat vond je ervan, hoe heb je het ervaren?",
+                "antwoord": "Wees eerlijk, ook over wat tegenviel."
+              },
+              {
+                "vraag": "Wat heb je geleerd?",
+                "antwoord": "Over werken in een internationale omgeving en over jezelf."
+              },
+              {
+                "vraag": "Wat waren jouw sterke en zwakke punten?",
+                "antwoord": "Geef van beide een voorbeeld."
+              },
+              {
+                "vraag": "Wat is de link met de opleiding?",
+                "antwoord": "Hoe helpt dit je als toekomstige IT'er?"
+              },
+              {
+                "vraag": "Waarom heb ik deze activiteit gekozen?",
+                "antwoord": "Waarom zegt juist deze activiteit iets over wie jij bent?"
+              }
+            ]
+          },
+          "fotos": [
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Ons internationale team"
+            },
+            {
+              "src": "images/foto-placeholder.svg",
+              "onderschrift": "Bezoek aan een bedrijf"
+            }
+          ]
+        },
+        {
+          "id": "pop-3",
+          "bord": "POP-sessie",
+          "domein": "Persoonlijke ontwikkeling",
+          "samenvatting": "Een laatste sessie over mijn persoonlijk ontwikkelingspad. Schrijf hier wat je eruit meenam.",
+          "activiteiten": [
+            {
+              "titel": "POP-sessie 3",
+              "omschrijving": "Korte omschrijving in één of twee regels.",
+              "locatie": "PXL, Hasselt",
+              "datum": "dd/mm/2026",
+              "duur": "2 uur",
+              "zelf": false
+            }
+          ],
+          "fotos": [
+            {
+              "src": "images/pop.svg",
+              "onderschrift": "Onderschrift bij de foto"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "eindreflectie": {
+    "bord": "Eindstation",
+    "samenvatting": "Twee jaar X-Talent zitten erop. Vat hier in twee zinnen samen wie je nu bent geworden.",
+    "vragen": [
+      {
+        "vraag": "Wie ben ik nu geworden?",
+        "antwoord": "Vergelijk jezelf met de student die in het 2de jaar instapte."
+      },
+      {
+        "vraag": "Wat heb ik bijgeleerd?",
+        "antwoord": "Zowel technisch als persoonlijk."
+      },
+      {
+        "vraag": "Hoe ziet mijn leertraject eruit?",
+        "antwoord": "Wat waren de belangrijkste stappen of keerpunten?"
+      },
+      {
+        "vraag": "Wat zijn mijn sterktes?",
+        "antwoord": "Geef twee of drie sterktes met een voorbeeld uit je activiteiten."
+      },
+      {
+        "vraag": "Waar kan ik nog in groeien?",
+        "antwoord": "Wees concreet en zeg hoe je eraan wilt werken."
+      },
+      {
+        "vraag": "In welke mate heb ik de X-Factor?",
+        "antwoord": "Empathie, (internationale) samenwerking, innovatie en ondernemerschap: waar zie je die bij jezelf terug?"
+      },
+      {
+        "vraag": "Hoe zie ik mijn toekomst?",
+        "antwoord": "Je ambities en plannen na je studie."
+      }
+    ],
+    "fotos": [
+      {
+        "src": "images/foto-placeholder.svg",
+        "onderschrift": "Een foto die jouw traject samenvat"
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+/* Lettertypes zitten in de site zelf (zie main.js): Barlow en Barlow Condensed. */
+
+:root {
+  --spoorblauw: #23407a;
+  --nacht: #172338;
+  --geel: #f6c534;
+  --geel-papier: #f7d84f;
+  --inkt: #1d2733;
+  --wit: #f7f7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--nacht);
+  color: var(--inkt);
+  font-family: 'Barlow', system-ui, sans-serif;
+}
+
+/* ───── Uitleg op het perron ───── */
+
+.platform-panel {
+  position: absolute;
+  z-index: 20;
+  will-change: transform;
+  left: 20px;
+  top: 104px;
+  bottom: 20px;
+  width: min(30rem, 38vw);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--inkt);
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(13, 21, 34, 0.3);
+  overflow: hidden;
+}
+.platform-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px 20px 14px;
+  background: var(--spoorblauw);
+  color: #fff;
+}
+.platform-panel__head p {
+  margin: 0 0 4px;
+  font: 500 0.95rem/1.2 'Barlow', sans-serif;
+  color: #c9d3e0;
+}
+.platform-panel__head h2 {
+  margin: 0;
+  font: 700 2.3rem/1 'Barlow Condensed', sans-serif;
+}
+.platform-panel__board {
+  flex: none;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--geel);
+  color: var(--nacht);
+  font: 700 1.1rem/1 'Barlow Condensed', sans-serif;
+  cursor: pointer;
+}
+.platform-panel__board:hover { background: #ffd65a; }
+.platform-panel__board:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.platform-panel__body {
+  flex: 1;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 4px 20px 28px;
+  font: 400 1.02rem/1.6 'Barlow', sans-serif;
+}
+.platform-panel__body:focus-visible { outline: 3px solid var(--spoorblauw); outline-offset: -3px; }
+.platform-panel__body > section { margin-top: 22px; }
+.platform-panel__lead { margin: 16px 0 0; font-size: 1.1rem; }
+.platform-panel__part {
+  margin: 0 0 8px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--geel);
+  font: 700 1.5rem/1.1 'Barlow Condensed', sans-serif;
+  color: var(--spoorblauw);
+}
+.platform-panel__rows { margin: 12px 0 0; }
+.platform-panel__rows > div {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid #dfe3e8;
+}
+.platform-panel__rows dt { font-weight: 600; }
+.platform-panel__rows dd { margin: 0; }
+.platform-panel__photos { display: none; }
+.activity { padding: 10px 0; border-bottom: 1px solid #dfe3e8; }
+.activity h4 { margin: 0; font: 600 1.1rem/1.3 'Barlow', sans-serif; }
+.activity p { margin: 2px 0 0; }
+.activity__meta { display: flex; flex-wrap: wrap; gap: 4px 16px; color: #4d5866; font-size: 0.95rem; }
+.qa { margin-top: 16px; }
+.qa h3,
+.qa h4 { margin: 0 0 4px; font: 600 1.1rem/1.3 'Barlow', sans-serif; }
+.qa p { margin: 0; }
+
+.panel-enter-active { transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.panel-leave-active { transition: opacity 0.2s ease, transform 0.2s ease; }
+.panel-enter-from,
+.panel-leave-to { opacity: 0; transform: translateX(-24px); }
+
+@media (max-width: 760px) {
+  .platform-panel {
+    left: 8px;
+    right: 8px;
+    top: auto;
+    bottom: 8px;
+    width: auto;
+    height: 62vh;
+  }
+  .platform-panel__head h2 { font-size: 1.8rem; }
+  .platform-panel__photos {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .platform-panel__photos figure { margin: 0; }
+  .platform-panel__photos img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; background: #eef1f4; }
+  .platform-panel__photos figcaption { margin-top: 4px; font-size: 0.9rem; color: #4d5866; }
+  .platform-panel__rows > div { grid-template-columns: 1fr; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel-enter-active,
+  .panel-leave-active { transition: none; }
+}
+
+/* ───── Overzicht (vertrekbord) ───── */
+
+.overview {
+  background: var(--nacht);
+  color: #fff;
+  padding: 88px 24px 72px;
+}
+.overview__inner { max-width: 72rem; margin: 0 auto; }
+.overview h2 {
+  margin: 0;
+  font: 700 3.4rem/1 'Barlow Condensed', sans-serif;
+  color: var(--geel);
+}
+.overview__lead {
+  max-width: 38rem;
+  margin: 14px 0 0;
+  font: 400 1.1rem/1.55 'Barlow', sans-serif;
+  color: #c9d3e0;
+}
+.timetable { margin-top: 48px; }
+.timetable h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 12px;
+  font: 700 2rem/1 'Barlow Condensed', sans-serif;
+}
+.timetable__year { font: 500 1.05rem/1 'Barlow', sans-serif; color: #c9d3e0; }
+.timetable__scroll { overflow-x: auto; border-radius: 6px; background: #0d1522; padding: 2px; }
+.timetable table {
+  width: 100%;
+  min-width: 56rem;
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  font: 400 0.98rem/1.4 'Barlow', sans-serif;
+}
+.timetable thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font: 600 1rem/1.2 'Barlow Condensed', sans-serif;
+  color: #c9d3e0;
+}
+.timetable tbody th,
+.timetable tbody td {
+  padding: 12px 14px;
+  background: #1c2a40;
+  text-align: left;
+  vertical-align: top;
+}
+.timetable tbody th {
+  color: var(--geel);
+  font: 600 1.15rem/1.25 'Barlow Condensed', sans-serif;
+}
+.timetable .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 28px 24px 40px;
+  color: #c9d3e0;
+  border-top: 1px solid #2c3b55;
+  font: 400 0.95rem/1.4 'Barlow', sans-serif;
+}
+.footer a { color: var(--geel); }
