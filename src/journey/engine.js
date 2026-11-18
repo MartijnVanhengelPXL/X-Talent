@@ -104,6 +104,8 @@ export class RideEngine {
         shown: false,
         op: -1,
         tf: '',
+        // Halve breedte, om te weten of iets door de tunnelopening te zien is.
+        hw: (d.layer === 'billboard' || d.layer === 'floor' || d.layer === 'ceiling' ? el.offsetWidth : 0) / 2,
       }
       return L
     })
@@ -349,6 +351,12 @@ export class RideEngine {
       const ride = 1 - clamp(this.view.yaw / 35, 0, 1)
       for (const L of this.layers) this.placeSide(L, camZ, narrow, sin, cos, prefix, ride)
     } else {
+      // In de tunnel zie je van spoor 3 alleen wat door de uitgang past: de rest niet tekenen.
+      const T = this.layout.tunnel
+      this.tunnelView =
+        T && camZ > T.start + P - 100 && camZ < T.end + 50
+          ? { end: T.end, lim: (this.layout.tunnelHalfWidth + 40) / (P + T.end - camZ) }
+          : null
       for (const L of this.layers) this.place(L, camZ, narrow)
     }
 
@@ -382,13 +390,21 @@ export class RideEngine {
       show = opacity > 0.01 && d > -(P - 60)
       const s = narrow ? L.ms : 1
       transform = `translate3d(${x}px,${y}px,${r1(-d)}px)${s !== 1 ? ` scale(${s})` : ''} translate(-50%,-50%)`
+      if (show && this.hiddenByTunnel(L, x, d)) show = false
     } else {
       const dFar = d + L.len
-      show = dFar > -(P - 60) && d < L.fog[1]
+      show = dFar > -(P - 60) && d < L.fog[1] && !this.hiddenByTunnel(L, x, d)
       opacity = L.base ? 1 : fade(d, L.fog[0], L.fog[1])
       transform = this.planeTransform(L, x, y, d, dFar)
     }
     this.apply(L, show, opacity, transform)
+  }
+
+  /** Staat dit object achter de tunnelwand, buiten wat je door de uitgang ziet? */
+  hiddenByTunnel(L, x, d) {
+    const tv = this.tunnelView
+    if (!tv || L.base || L.z <= tv.end + 5) return false
+    return Math.abs(x) - L.hw > tv.lim * (P + d)
   }
 
   /** Op het perron (of onderweg): de camera staat opzij en kijkt naar rechts. */

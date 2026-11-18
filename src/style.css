@@ -190,6 +190,38 @@ body {
 }
 .timetable .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 
+/* Op een gsm: elke activiteit als een kaartje, in plaats van een brede tabel. */
+@media (max-width: 760px) {
+  .overview { padding: 56px 14px 48px; }
+  .overview h2 { font-size: 2.4rem; }
+  .timetable { margin-top: 36px; }
+  .timetable__scroll { overflow: visible; background: none; padding: 0; }
+  .timetable table { min-width: 0; border-spacing: 0; }
+  .timetable thead { display: none; }
+  .timetable table,
+  .timetable tbody,
+  .timetable tr,
+  .timetable tbody th,
+  .timetable tbody td { display: block; }
+  .timetable tbody tr {
+    margin-bottom: 8px;
+    padding: 12px 14px;
+    background: #1c2a40;
+    border-radius: 6px;
+  }
+  .timetable tbody th,
+  .timetable tbody td { padding: 2px 0; background: none; }
+  .timetable tbody th { margin-bottom: 4px; }
+  .timetable tbody td:empty { display: none; }
+  .timetable tbody td::before {
+    content: attr(data-label) ': ';
+    color: #c9d3e0;
+    font-weight: 500;
+  }
+  .timetable tbody td[data-label='Omschrijving']::before { content: none; }
+  .footer { padding: 24px 14px 32px; }
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

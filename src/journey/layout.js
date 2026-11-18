@@ -73,7 +73,7 @@ export function buildLayout(data) {
   const windows = []
   stops.forEach((stop, i) => {
     if (tunnel && stop.year === tunnel.year && !windows.some((w) => w.id === 'tunnel')) {
-      windows.push({ id: 'tunnel', kind: 'tunnel', year: tunnel.year, cam: tunnel.start + 1300, start: tunnel.start + 300, hud: null })
+      windows.push({ id: 'tunnel', kind: 'tunnel', year: tunnel.year, cam: tunnel.start + 1300, start: tunnel.start + 1150, hud: null })
     }
     windows.push({
       id: stop.id,
@@ -131,5 +131,5 @@ export function buildLayout(data) {
     trees.push({ z: Math.round(tz), x: Math.round(x), kind: kinds[Math.floor(rand() * kinds.length)], size: 0.8 + rand() * 0.5 })
   }
 
-  return { stops, windows, tunnel, total, trackVh, ground, poles, wires, trees, bufferZ, platformView: PLATFORM_VIEW }
+  return { stops, windows, tunnel, tunnelHalfWidth: TUNNEL.halfWidth, total, trackVh, ground, poles, wires, trees, bufferZ, platformView: PLATFORM_VIEW }
 }

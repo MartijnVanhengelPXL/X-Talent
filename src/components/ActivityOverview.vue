@@ -37,12 +37,12 @@ const jaren = data.jaren.map((j) => ({
             <tbody>
               <tr v-for="a in j.rijen" :key="a.titel">
                 <th scope="row">{{ a.titel }}</th>
-                <td>{{ a.domein }}</td>
-                <td>{{ a.omschrijving }}</td>
-                <td>{{ a.locatie }}</td>
-                <td class="num">{{ a.datum }}</td>
-                <td>{{ a.duur }}</td>
-                <td>{{ a.zelf ? 'Ja' : 'Nee' }}</td>
+                <td data-label="Domein">{{ a.domein }}</td>
+                <td data-label="Omschrijving">{{ a.omschrijving }}</td>
+                <td data-label="Locatie">{{ a.locatie }}</td>
+                <td data-label="Datum" class="num">{{ a.datum }}</td>
+                <td data-label="Duur">{{ a.duur }}</td>
+                <td data-label="Zelf aangebracht">{{ a.zelf ? 'Ja' : 'Nee' }}</td>
               </tr>
             </tbody>
           </table>
